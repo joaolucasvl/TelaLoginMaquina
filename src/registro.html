@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Monaco Beer</title>
+    <link rel="stylesheet" href="/TelaLogin/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="script.js" defer></script>
+    <script type="module" src="/TelaLogin/script/firebaseauth.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="cabecalho">
+            <h1>Registro Monaco Beer</h1>
+        </div>
+        <div class="campo">
+            <label for="username">User:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="botao">
+            <button id="submitSignUp">Registar</button>
+        </div>
+        <p id="message-register"></p>
+    </div>
+</body>
+</html>

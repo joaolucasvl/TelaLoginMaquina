@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Controle da máquina de auto-serviço Monaco Beer para monitoramento de torneiras e vendas.">
+    <title>Controle Maquina de Auto Serviço</title>
+    <link rel="stylesheet" href="/TelaLogin/css/homepage.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Monaco Beer Controle</h1>
+        <button id="logoutButton" aria-label="Sair do sistema">Sair</button>
+    </div>
+
+    <main>
+        <div class="torneira">
+            <h1>Dados Torneira 1:</h1>
+            <p>Copos vendidos: 120</p>
+            <p>Valor Total: R$ 300,00</p>
+            <p>Trocar barril em: 2 dias</p>
+            <button class="main_button">Liberar Torneira</button>
+            <button class="main_button">Degustação</button>
+        </div>
+
+        <div class="torneira">
+            <h1>Dados Torneira 2:</h1>
+            <p>Copos vendidos: 120</p>
+            <p>Valor Total: R$ 300,00</p>
+            <p>Trocar barril em: 2 dias</p>
+            <button class="main_button">Liberar Torneira</button>
+            <button class="main_button">Degustação</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Monaco Beer - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função do botão "Sair"
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            localStorage.clear(); // Limpar dados locais
+            window.location.href = '/TelaLogin/src/index.html'; // Redirecionar para a página de login
+        });
+    </script>
+</body>
+</html>

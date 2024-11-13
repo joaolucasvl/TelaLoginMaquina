@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    background-color: rgb(56, 56, 56);
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garantir que a altura ocupe toda a tela */
+    font-size: 16px; /* Usar uma unidade relativa */
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #444; /* Cor de fundo do container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar um efeito de profundidade */
+}
+.campo {
+    display: flex;
+    flex-direction: column; /* Organiza os campos input em coluna */
+    margin-top: 15px;
+    gap: 1rem; /* Adiciona um pequeno espaço entre os campos */
+    width: 100%;
+    max-width: 320px; /* Limita a largura máxima */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Ajuste o espaçamento entre label e input */
+    font-size: 1rem; /* Tamanho de fonte relativo */
+}
+
+input {
+    
+    padding: 0.75rem; /* Ajuste o padding para ser mais confortável */
+    border-radius: 5px;
+    width: 300px;
+    font-size: 1rem; /* Tamanho de fonte relativo */
+    margin-bottom: 1rem; /* Espaçamento entre os campos de input */
+    border: 2px solid #ccc; /* Cor da borda do input */
+    background-color: #333; /* Cor de fundo do input */
+    color: white; /* Cor do texto */
+    width: 100%; /* Faz os inputs ocuparem toda a largura disponível */
+}
+
+input:focus {
+    border-color: #4CAF50; /* Cor da borda ao focar */
+    outline: none; /* Remover outline padrão do navegador */
+}
+
+button {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: 300px;
+    padding: 1rem; /* Ajuste o padding para um tamanho confortável */
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Cor do botão */
+    border: none;
+    font-size: 1rem; /* Tamanho de fonte relativo */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+button:hover {
+    background-color: #45a049; /* Cor ao passar o mouse sobre o botão */
+}
+
+button:active {
+    background-color: #3e8e41; /* Cor ao clicar no botão */
+}
