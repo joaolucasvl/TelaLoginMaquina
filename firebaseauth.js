@@ -47,7 +47,7 @@ if (signUp) {
         const docRef = doc(db, "users", user.uid);
         setDoc(docRef, userData)
           .then(() => {
-            window.location.href = '/TelaLogin/src/index.html';  // Redireciona para a página de login após registro
+            window.location.href = 'index.html';  // Redireciona para a página de login após registro
           })
           .catch((error) => {
             console.log("Erro ao salvar dados do usuário:", error);
