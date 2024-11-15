@@ -1,12 +1,13 @@
 // Importando as funções do Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyB9W9DOcrXgSFC7f7NKG2ySFawSZ9h5VIo",
   authDomain: "login-form-a3c93.firebaseapp.com",
+  databaseURL: "https://login-form-a3c93-default-rtdb.firebaseio.com/", // Adicione o URL do Realtime Database aqui
   projectId: "login-form-a3c93",
   storageBucket: "login-form-a3c93.appspot.com",
   messagingSenderId: "248266035834",
@@ -16,7 +17,7 @@ const firebaseConfig = {
 // Inicializando o Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const database = getDatabase(app);
 
 // Função de Registro
 const signUp = document.getElementById('submitSignUp');
@@ -43,9 +44,9 @@ if (signUp) {
           email: email
         };
 
-        // Salvando dados do usuário no Firestore
-        const docRef = doc(db, "users", user.uid);
-        setDoc(docRef, userData)
+        // Salvando dados do usuário no Realtime Database
+        const userRef = ref(database, "users/" + user.uid);
+        set(userRef, userData)
           .then(() => {
             window.location.href = 'index.html';  // Redireciona para a página de login após registro
           })
