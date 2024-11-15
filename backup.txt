@@ -1,0 +1,60 @@
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+const auth = getAuth();
+const database = getDatabase();
+
+// Função para buscar e exibir os dados da torneira
+function displayMachineData(userId) {
+  // Defina o caminho correto para os dados da torneira
+  const machineRef = ref(database, 'users/' + userId + '/maquina_1/torneira_1');
+
+  // Obtém os dados da máquina do Firebase Realtime Database
+  get(machineRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      const machineData = snapshot.val();
+      console.log("Dados da Torneira 1:", machineData); // Verifique os dados no console
+
+      // Calcular o total a receber
+      const coposVendidos = parseInt(machineData.copos_vendidos) || 0; // Garante que seja um número
+      const totalReceber = coposVendidos * 8;
+
+      // Seleciona o elemento para exibir os dados
+      const userDataElement = document.querySelector('#user-data');
+      if (userDataElement) {
+        userDataElement.innerHTML = `
+          <h1>Dados da Torneira:</h1>
+          <p>Copos vendidos: ${coposVendidos}</p>
+          <p>Estilo: ${machineData.estilo}</p>
+          <p>Total a receber: R$ ${totalReceber.toFixed(2)}</p>
+          <button class="main_button">Liberar Torneira</button>
+        `;
+      } else {
+        console.log("Elemento com id 'user-data' não encontrado.");
+      }
+    } else {
+      console.log("Nenhum dado encontrado para a Torneira.");
+    }
+  }).catch((error) => {
+    console.error("Erro ao buscar dados da máquina:", error);
+  });
+}
+
+// Verifica se o usuário está logado e exibe os dados na homepage
+window.addEventListener('load', () => {
+  const userId = localStorage.getItem('loggedInUserId');
+  console.log("User ID recuperado:", userId); // Verifique se o userId está correto
+
+  if (userId) {
+    displayMachineData(userId);
+  } else {
+    // Redireciona para a página de login se o usuário não estiver logado
+    window.location.href = 'index.html';
+  }
+});
+
+// Função para o botão "Sair"
+document.getElementById('logoutButton').addEventListener('click', function() {
+  localStorage.clear(); // Limpar dados locais
+  window.location.href = 'index.html'; // Redirecionar para a página de login
+});

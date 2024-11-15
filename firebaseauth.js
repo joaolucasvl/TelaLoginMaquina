@@ -1,13 +1,13 @@
 // Importando as funções do Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyB9W9DOcrXgSFC7f7NKG2ySFawSZ9h5VIo",
   authDomain: "login-form-a3c93.firebaseapp.com",
-  databaseURL: "https://login-form-a3c93-default-rtdb.firebaseio.com/", // Adicione o URL do Realtime Database aqui
+  databaseURL: "https://login-form-a3c93-default-rtdb.firebaseio.com/",
   projectId: "login-form-a3c93",
   storageBucket: "login-form-a3c93.appspot.com",
   messagingSenderId: "248266035834",

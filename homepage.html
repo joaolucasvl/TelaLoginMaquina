@@ -14,35 +14,15 @@
     </div>
 
     <main>
-        <div class="torneira">
-            <h1>Dados Torneira 1:</h1>
-            <p>Copos vendidos: 120</p>
-            <p>Valor Total: R$ 300,00</p>
-            <p>Trocar barril em: 2 dias</p>
-            <button class="main_button">Liberar Torneira</button>
-            <button class="main_button">Degustação</button>
-        </div>
-
-        <div class="torneira">
-            <h1>Dados Torneira 2:</h1>
-            <p>Copos vendidos: 120</p>
-            <p>Valor Total: R$ 300,00</p>
-            <p>Trocar barril em: 2 dias</p>
-            <button class="main_button">Liberar Torneira</button>
-            <button class="main_button">Degustação</button>
-        </div>
+        <div id="torneira-1-data" class="torneira"></div> <!-- Contêiner para dados da Torneira 1 -->
+        <div id="torneira-2-data" class="torneira"></div> <!-- Contêiner para dados da Torneira 2 -->
     </main>
 
     <footer>
         <p>© 2024 Monaco Beer - Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Função do botão "Sair"
-        document.getElementById('logoutButton').addEventListener('click', function() {
-            localStorage.clear(); // Limpar dados locais
-            window.location.href = 'index.html'; // Redirecionar para a página de login
-        });
-    </script>
+    <script type="module" src="firebaseauth.js"></script> <!-- Script para Firebase e exibir os dados -->
+    <script type="module" src="homepage.js"></script> <!-- Script específico para carregar dados na homepage -->
 </body>
 </html>

@@ -54,7 +54,7 @@ main {
     background-color: #333;
 }
 
-.torneira {
+.torneira, #user-data {
     display: flex;
     flex-direction: column;
     width: 48%; /* Controla a largura das torneiras */
